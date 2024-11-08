@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tienda de Autopartes</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+		/>
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<!-- Barra de promoción -->
+		<div class="promo-bar">
+			<p>HASTA UN -30% EN AUTOPARTES SELECCIONADAS</p>
+		</div>
+
+		<!-- Encabezado -->
+		<header class="main-header">
+			<div class="container d-flex justify-content-between align-items-center">
+				<h1 class="logo">AutoPartes</h1>
+				<div class="search-bar">
+					<input
+						type="text"
+						id="search-input"
+						placeholder="Buscar productos..."
+						aria-label="Buscar productos"
+					/>
+					<button class="search-button"><i class="fas fa-search"></i></button>
+				</div>
+				<div class="cart">
+					<i class="fas fa-shopping-cart"></i>
+					<span id="cart-count">0</span> artículos -
+					<span id="cart-total">0,00 €</span>
+				</div>
+			</div>
+		</header>
+
+		<!-- Navegación de categorías -->
+		<nav class="category-nav d-flex justify-content-center">
+			<button class="btn btn-outline-light" onclick="filterCategory('Todos')">
+				Todos
+			</button>
+			<button
+				class="btn btn-outline-light"
+				onclick="filterCategory('Neumáticos')"
+			>
+				Neumáticos
+			</button>
+			<button class="btn btn-outline-light" onclick="filterCategory('Frenos')">
+				Frenos
+			</button>
+			<button class="btn btn-outline-light" onclick="filterCategory('Motor')">
+				Motor
+			</button>
+		</nav>
+
+		<!-- Sección de productos -->
+		<section id="product-list" class="product-list container my-5">
+			<h2>Productos</h2>
+			<div id="product-container" class="row">
+				<!-- Productos se mostrarán aquí en una cuadrícula -->
+			</div>
+		</section>
+
+		<!-- Pie de página -->
+		<footer class="footer">
+			<p>&copy; 2024 AutoPartes. Todos los derechos reservados.</p>
+		</footer>
+	</body>
+</html>
