@@ -1,4 +1,3 @@
-// Lista de productos de ejemplo
 const products = [
 	{
 		id: 1,
@@ -50,14 +49,12 @@ const products = [
 	},
 ];
 
-// Variables globales
 let cart = [];
 let displayedProducts = products;
 
-// Mostrar productos en la página
 function displayProducts(items) {
 	const productContainer = document.getElementById("product-container");
-	productContainer.innerHTML = ""; // Limpiar productos actuales
+	productContainer.innerHTML = "";
 
 	items.forEach((product) => {
 		const productCard = document.createElement("div");
@@ -73,7 +70,6 @@ function displayProducts(items) {
 	});
 }
 
-// Función para filtrar productos por categoría
 function filterCategory(category) {
 	displayedProducts =
 		category === "Todos"
@@ -82,7 +78,6 @@ function filterCategory(category) {
 	displayProducts(displayedProducts);
 }
 
-// Función de búsqueda en tiempo real
 document.getElementById("search-input").addEventListener("input", (e) => {
 	const searchText = e.target.value.toLowerCase();
 	const filteredProducts = displayedProducts.filter((p) =>
@@ -91,14 +86,12 @@ document.getElementById("search-input").addEventListener("input", (e) => {
 	displayProducts(filteredProducts);
 });
 
-// Añadir al carrito
 function addToCart(productId) {
 	const product = products.find((p) => p.id === productId);
 	cart.push(product);
 	updateCart();
 }
 
-// Actualizar carrito
 function updateCart() {
 	const cartCount = document.getElementById("cart-count");
 	const cartTotal = document.getElementById("cart-total");
@@ -108,5 +101,4 @@ function updateCart() {
 		cart.reduce((total, product) => total + product.price, 0).toFixed(2) + " €";
 }
 
-// Cargar productos iniciales
 displayProducts(products);
